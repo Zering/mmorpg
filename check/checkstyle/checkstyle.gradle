@@ -1,0 +1,10 @@
+apply plugin: 'checkstyle'
+
+ext.checkstyleConfigDir = "$configDir/checkstyle"
+
+checkstyle {
+	toolVersion = '5.6'
+	configFile = new File(checkstyleConfigDir, "style_checks.xml")
+	//ignoreFailures = true
+	//ignoreViolations = false
+}

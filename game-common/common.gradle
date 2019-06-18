@@ -1,0 +1,20 @@
+
+
+//apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'org.springframework.boot'
+
+gradle.taskGraph.whenReady {
+    tasks.each { task ->
+        if (task.name.contains("bootRepackage") 
+            || task.name.contains("findMainClass")) {
+            task.enabled = false
+        }
+    }
+}
+
+
+dependencies {	
+	compile 'com.google.code.gson:gson'
+	
+	compile 'org.apache.commons:commons-lang3'	
+}
